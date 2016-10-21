@@ -1,0 +1,32 @@
+<template name="dashboard">
+	{{#if currentUser}}
+	<div class="container">
+		<div class="row" id="icon-row">
+			<div class="stem col-md-3 wow fadeInLeft animated" data-wow-delay="0.4s">
+				<div class="iconbox">
+					<i class="stem-img fa fa-cogs fa-5x" style="cursor: pointer"></i>
+				</div>
+				<p class="icntitle">STEM</p>
+			</div>
+			<div class="creative col-md-3 wow fadeInUp animated" data-wow-delay="0.8s">
+				<div class="iconbox">
+					<i class="creative-img fa fa-paint-brush fa-5x" style="cursor: pointer"></i>
+				</div>
+				<p class="icntitle">Creative</p>
+			</div>
+			<div class="publicenterprise col-md-3 wow fadeInRight animated" data-wow-delay="1.2s">
+				<div class="iconbox">
+					<i class="publicenterprise-img fa fa-globe fa-5x" style="cursor: pointer"></i>
+				</div>
+				<p class="icntitle">Public Enterprise</p>
+			</div>
+			<div class="hidden show-all col-md-3 wow fadeInRight animated" data-wow-delay="1.6s">
+				<button type="button" class="btn btn-default">Show All</button>
+			</div>
+		</div>
+		
+		{{> passionsForm }}
+		
+	</div> 
+	{{/if}}
+</template>

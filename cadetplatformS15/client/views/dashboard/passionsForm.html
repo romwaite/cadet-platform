@@ -1,0 +1,19 @@
+<template name="passionsForm">
+	{{#if fieldClicked}}
+	<form>
+		{{#each getPassions}}
+		<div class="col-md-4">
+			<input type="checkbox" name="passions" value="{{passion}}"><a href="#" id="{{passion}}" data-toggle="modal" data-target="#passionsModal">&nbsp;{{passion}}</a><br>
+		</div>
+		{{/each}}
+		<br><br><br>
+		<div class="submit-button">
+			<input type="submit" class="btn btn-primary" value="Add Passion(s)">
+		</div>
+		<br><br><br>
+	</form>
+	
+	{{> passionsInfo}}
+	
+	{{/if}}
+</template>
