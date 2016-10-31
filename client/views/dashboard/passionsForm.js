@@ -6,9 +6,15 @@ Template.passionsForm.helpers({
 	'fieldClicked': function() {
 		return Session.get("sFieldClicked");
 	},
+
 	'getPassions': function() {
 		sField = Session.get("field");
 		return Passion.find( { field: sField } );
+	},
+
+	'youtubeEmbed': function(videoUrl) {
+		if (!videoUrl) return '';
+		return videoUrl.replace('/watch?v=', '/embed/')
 	}
 })
 
@@ -42,6 +48,9 @@ Template.passionsForm.events({
 	'click a': function(event, template) {
 		event.preventDefault();
 		Session.set("selectedPassion", event.target.id);
-		console.log(event.target.id);
+		$('#passions_video').attr('src', event.target.dataset.video)
+		console.log(event.target.dataset.blurb)
+		console.log($('#passions_blurb').length)
+		$('#passions_blurb').html(event.target.dataset.blurb)
 	}
 })
