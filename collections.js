@@ -1,1 +1,1 @@
-PassionTree = new Mongo.Collection('PassionTree');
+Passion = new Mongo.Collection('Passion');
